@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In</title>
+  <link rel="stylesheet" href="/static/signin.css">
+</head>
+<body>
+  <div class="container">
+    <div class="form-box">
+      <div class="left-panel">
+        <h2>Hello!</h2>
+        <p>Sign in to your account</p>
+        <form action="/auth/signin" method="post">
+          <div class="input-group">
+            <input name="username" type="text" placeholder="Username" required>
+          </div>
+          <div class="input-group">
+            <input name="password" type="password" placeholder="Password" required>
+          </div>
+          <div class="options">
+            <label><input type="checkbox"> Remember me</label>
+            <a href="#">Forgot password?</a>
+          </div>
+          <button type="submit" class="btn">Sign In</button>
+          <p class="switch">Don’t have an account? <a href="/auth/signup">Create</a></p>
+        </form>
+      </div>
+      <div class="right-panel gradient-bg">
+        <h2>Welcome Back!</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae mauris volutpat.</p>
+      </div>
+    </div>
+  </div>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyAhCqr1NjzesAXHK-jBNQYzPiKekpk42PQ",
+      authDomain: "ads-project-9c64f.firebaseapp.com",
+      projectId: "ads-project-9c64f",
+      storageBucket: "ads-project-9c64f.firebasestorage.app",
+      messagingSenderId: "539986492655",
+      appId: "1:539986492655:web:74f2c57ca3d73ed802ef1a",
+      measurementId: "G-5ESFCWYFEL"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    const DASHBOARD_URL = "http://localhost:8501";
+
+    const form = document.querySelector('form');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const emailInput = form.querySelector('input[name="username"]');
+      const passwordInput = form.querySelector('input[name="password"]');
+      const email = emailInput.value.trim();
+      const password = passwordInput.value;
+      try {
+        await signInWithEmailAndPassword(auth, email, password);
+        window.location.href = DASHBOARD_URL;
+      } catch (err) {
+        alert(err?.message || 'Failed to sign in');
+      }
+    });
+  </script>
+</body>
+</html>

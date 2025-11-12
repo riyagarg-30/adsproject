@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="/static/signin.css">
+</head>
+<body>
+  <div class="container">
+    <div class="form-box reverse">
+      <div class="left-panel gradient-bg">
+        <h2>Glad to see you!</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dignissim.</p>
+      </div>
+      <div class="right-panel">
+        <h2>Hello, friend!</h2>
+        <form action="/auth/signup" method="post">
+          <div class="input-group">
+            <input name="username" type="text" placeholder="Username" required>
+          </div>
+          <div class="input-group">
+            <input type="email" placeholder="E-mail" required>
+          </div>
+          <div class="input-group">
+            <input name="password" type="password" placeholder="Password" required>
+          </div>
+          <label class="terms">
+            <input type="checkbox" required> I read and agree to <a href="#">Terms & Conditions</a>
+          </label>
+          <button type="submit" class="btn">Create Account</button>
+          <p class="switch">Already have an account? <a href="/auth/signin">Sign In</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

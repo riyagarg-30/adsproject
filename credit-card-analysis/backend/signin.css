@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Baloo+2:wght@600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #0f1116 url('/static/A_digital_image_features_a_gradient_background_tra.png') center center / cover no-repeat fixed;
+}
+
+.container {
+  width: 900px;
+  max-width: 95%;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.form-box {
+  display: flex;
+}
+
+.form-box.reverse {
+  flex-direction: row-reverse;
+}
+
+.left-panel, .right-panel {
+  flex: 1;
+  padding: 60px 40px;
+}
+
+.gradient-bg {
+  display: none; /* hide blue patch panel */
+}
+
+.form-box.reverse .gradient-bg {
+  border-radius: 20px 0 0 20px;
+}
+
+h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  font-family: 'Baloo 2', cursive;
+  color: #6b5b95;
+}
+
+p {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+  width: 100%;
+  padding: 12px 15px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  background: #6b5b95; /* purple */
+  color: #ffffff;
+  font-size: 14px;
+  box-shadow: 0 0 0 2px rgba(107,91,149,0.15) inset, 0 4px 10px rgba(107,91,149,0.25);
+}
+
+input::placeholder {
+  color: #e5e0f0;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+a {
+  color: #6b5b95;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.btn {
+  width: 100%;
+  background: linear-gradient(135deg, #5ac8fa, #3498db);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.switch {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.terms {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  gap: 5px;
+  margin-bottom: 15px;
+}
